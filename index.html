@@ -152,23 +152,34 @@
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
+  
+  <!-- SERVIÇOS (EXPANDIDO) -->
   <section id="servicos" class="max-w-6xl mx-auto px-4 py-14 md:py-20">
     <h2 class="text-2xl md:text-3xl font-bold">O que eu automatizo</h2>
-    <p class="text-white/60 mt-2">Fluxos prontos para adaptar ao seu negócio.</p>
+    <p class="text-white/60 mt-2">Do atendimento personalizado aos fluxos que rodam sozinhos — adapto ao seu negócio.</p>
 
     <!-- mobile carousel -->
     <div class="mt-6 md:hidden overflow-x-auto snap-x no-scrollbar" id="services-scroll">
       <div class="flex gap-4 w-max">
-        <!-- 6 cards -->
+        <!-- 1) Atendimento personalizado -->
+        <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
+          <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🤝</div>
+          <h3 class="mt-4 text-xl font-semibold">Atendimento & Consultoria</h3>
+          <p class="mt-2 text-white/70 text-sm">Diagnóstico rápido e plano sob medida — até o que você acha que não dá pra automatizar.</p>
+          <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+            <li>Mapeamento do seu processo</li><li>Roadmap com etapas e prazos</li><li>Prioridades de alto impacto</li>
+          </ul>
+        </div>
+        <!-- 2) WhatsApp Automático -->
         <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
           <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📲</div>
           <h3 class="mt-4 text-xl font-semibold">WhatsApp Automático</h3>
-          <p class="mt-2 text-white/70 text-sm">Confirmações, lembretes e cobranças disparadas por planilha/form.</p>
+          <p class="mt-2 text-white/70 text-sm">Confirmações, lembretes e cobranças a partir de planilha ou formulário.</p>
           <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
             <li>Templates aprovados</li><li>Anexos PDF</li><li>Logs e reenvios</li>
           </ul>
         </div>
+        <!-- 3) Orçamentos & NF-e -->
         <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
           <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🧾</div>
           <h3 class="mt-4 text-xl font-semibold">Orçamentos & NF‑e</h3>
@@ -177,6 +188,7 @@
             <li>Markup e impostos</li><li>Envio WhatsApp/E‑mail</li><li>Arquivamento</li>
           </ul>
         </div>
+        <!-- 4) Estoque inteligente -->
         <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
           <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📦</div>
           <h3 class="mt-4 text-xl font-semibold">Estoque inteligente</h3>
@@ -185,6 +197,7 @@
             <li>Entrada/Saída por planilha</li><li>Etiquetas</li><li>Alerta crítico</li>
           </ul>
         </div>
+        <!-- 5) Agendamentos -->
         <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
           <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📅</div>
           <h3 class="mt-4 text-xl font-semibold">Agendamentos</h3>
@@ -193,6 +206,7 @@
             <li>Google Calendar</li><li>Lembretes multi‑canal</li><li>Relatório de presença</li>
           </ul>
         </div>
+        <!-- 6) Cobranças & Pix -->
         <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
           <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">💳</div>
           <h3 class="mt-4 text-xl font-semibold">Cobranças & Pix</h3>
@@ -201,20 +215,75 @@
             <li>Link/Qr Pix</li><li>Confirmação automática</li><li>Baixa em planilha</li>
           </ul>
         </div>
+        <!-- 7) Dashboards -->
         <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
           <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📊</div>
           <h3 class="mt-4 text-xl font-semibold">Dashboards</h3>
           <p class="mt-2 text-white/70 text-sm">Indicadores diários no WhatsApp/E‑mail.</p>
           <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
-            <li>Vendas e retrabalho</li><li>Conversão e faltas</li><li>Custo médio</li>
+            <li>Vendas/retrabalho</li><li>Conversão/faltas</li><li>Custo médio</li>
+          </ul>
+        </div>
+        <!-- 8) Onboarding & Treinamento -->
+        <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
+          <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🎓</div>
+          <h3 class="mt-4 text-xl font-semibold">Onboarding & Treinamento</h3>
+          <p class="mt-2 text-white/70 text-sm">Vídeos curtos e documentação para o time.</p>
+          <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+            <li>Passo a passo simples</li><li>Boas práticas</li><li>FAQ do processo</li>
+          </ul>
+        </div>
+        <!-- 9) Integrações ERP/Marketplace -->
+        <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
+          <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🔗</div>
+          <h3 class="mt-4 text-xl font-semibold">Integrações ERP/Marketplace</h3>
+          <p class="mt-2 text-white/70 text-sm">n8n/Apps Script conectando seus sistemas.</p>
+          <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+            <li>Webhooks/planilhas</li><li>Importação/Exportação</li><li>Logs de integração</li>
+          </ul>
+        </div>
+        <!-- 10) Auditoria & LGPD básica -->
+        <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
+          <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🔒</div>
+          <h3 class="mt-4 text-xl font-semibold">Auditoria & LGPD básica</h3>
+          <p class="mt-2 text-white/70 text-sm">Registros, consentimentos e minimização.</p>
+          <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+            <li>Planos de acesso</li><li>Retenção segura</li><li>Checklist de riscos</li>
+          </ul>
+        </div>
+        <!-- 11) Relatórios diários -->
+        <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
+          <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📰</div>
+          <h3 class="mt-4 text-xl font-semibold">Relatórios diários</h3>
+          <p class="mt-2 text-white/70 text-sm">Resumo no WhatsApp às 18h, todo dia.</p>
+          <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+            <li>KPIs essenciais</li><li>Tarefas pendentes</li><li>Alertas do dia</li>
+          </ul>
+        </div>
+        <!-- 12) Backups & Logs -->
+        <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
+          <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🛟</div>
+          <h3 class="mt-4 text-xl font-semibold">Backups & Logs</h3>
+          <p class="mt-2 text-white/70 text-sm">Histórico de tudo e recuperação simples.</p>
+          <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+            <li>Logs por fluxo</li><li>Backup automático</li><li>Restauração rápida</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- desktop grid -->
+    <!-- desktop grid (12 cards) -->
     <div class="mt-6 hidden md:grid md:grid-cols-3 gap-6">
-      <!-- 6 cards -->
+      <!-- Repeat same items in desktop grid -->
+      <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
+        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🤝</div>
+        <h3 class="mt-4 text-xl font-semibold">Atendimento & Consultoria</h3>
+        <p class="mt-2 text-white/70 text-sm">Diagnóstico rápido e plano sob medida — até o que você acha que não dá pra automatizar.</p>
+        <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+          <li>Mapeamento do processo</li><li>Roadmap com prazos</li><li>Prioridades de alto impacto</li>
+        </ul>
+      </div>
+
       <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
         <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📲</div>
         <h3 class="mt-4 text-xl font-semibold">WhatsApp Automático</h3>
@@ -223,14 +292,16 @@
           <li>Templates aprovados</li><li>Anexos PDF</li><li>Logs e reenvios</li><li>Antispam básico</li>
         </ul>
       </div>
+
       <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
         <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🧾</div>
         <h3 class="mt-4 text-xl font-semibold">Orçamentos & NF‑e</h3>
         <p class="mt-2 text-white/70 text-sm">Cálculo automático, PDF e integração com emissão.</p>
         <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
-          <li>Markup e impostos</li><li>Envio por WhatsApp/E‑mail</li><li>Arquivamento</li><li>Numeração e versão</li>
+          <li>Markup e impostos</li><li>Envio WhatsApp/E‑mail</li><li>Arquivamento</li><li>Numeração e versão</li>
         </ul>
       </div>
+
       <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
         <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📦</div>
         <h3 class="mt-4 text-xl font-semibold">Estoque inteligente</h3>
@@ -239,6 +310,7 @@
           <li>Entrada/Saída por planilha</li><li>Etiquetas</li><li>Alerta crítico</li><li>Lista de reposição</li>
         </ul>
       </div>
+
       <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
         <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📅</div>
         <h3 class="mt-4 text-xl font-semibold">Agendamentos</h3>
@@ -247,6 +319,7 @@
           <li>Google Calendar</li><li>Lembretes multi‑canal</li><li>Relatório de presença</li><li>Reagendamento rápido</li>
         </ul>
       </div>
+
       <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
         <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">💳</div>
         <h3 class="mt-4 text-xl font-semibold">Cobranças & Pix</h3>
@@ -255,12 +328,58 @@
           <li>Link/Qr Pix</li><li>Confirmação automática</li><li>Baixa em planilha</li><li>Alertas de atraso</li>
         </ul>
       </div>
+
       <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
         <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📊</div>
         <h3 class="mt-4 text-xl font-semibold">Dashboards</h3>
         <p class="mt-2 text-white/70 text-sm">Indicadores diários no WhatsApp/E‑mail.</p>
         <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
           <li>Vendas e retrabalho</li><li>Conversão e faltas</li><li>Custo médio</li><li>Exportação CSV</li>
+        </ul>
+      </div>
+
+      <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
+        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🎓</div>
+        <h3 class="mt-4 text-xl font-semibold">Onboarding & Treinamento</h3>
+        <p class="mt-2 text-white/70 text-sm">Vídeos curtos e documentação para o time.</p>
+        <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+          <li>Passo a passo simples</li><li>Boas práticas</li><li>FAQ do processo</li>
+        </ul>
+      </div>
+
+      <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
+        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🔗</div>
+        <h3 class="mt-4 text-xl font-semibold">Integrações ERP/Marketplace</h3>
+        <p class="mt-2 text-white/70 text-sm">n8n/Apps Script conectando seus sistemas.</p>
+        <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+          <li>Webhooks/planilhas</li><li>Importação/Exportação</li><li>Logs de integração</li>
+        </ul>
+      </div>
+
+      <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
+        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🔒</div>
+        <h3 class="mt-4 text-xl font-semibold">Auditoria & LGPD básica</h3>
+        <p class="mt-2 text-white/70 text-sm">Registros, consentimentos e minimização.</p>
+        <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+          <li>Planos de acesso</li><li>Retenção segura</li><li>Checklist de riscos</li>
+        </ul>
+      </div>
+
+      <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
+        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📰</div>
+        <h3 class="mt-4 text-xl font-semibold">Relatórios diários</h3>
+        <p class="mt-2 text-white/70 text-sm">Resumo no WhatsApp às 18h, todo dia.</p>
+        <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+          <li>KPIs essenciais</li><li>Tarefas pendentes</li><li>Alertas do dia</li>
+        </ul>
+      </div>
+
+      <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
+        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🛟</div>
+        <h3 class="mt-4 text-xl font-semibold">Backups & Logs</h3>
+        <p class="mt-2 text-white/70 text-sm">Histórico de tudo e recuperação simples.</p>
+        <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+          <li>Logs por fluxo</li><li>Backup automático</li><li>Restauração rápida</li>
         </ul>
       </div>
     </div>
@@ -370,7 +489,7 @@
           </label>
         </div>
         <a id="wa-btn" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-white text-black px-5 py-3 font-semibold w-full md:w-auto hover:shadow-[0_0_0_5px_rgba(255,255,255,0.25)] transition">
-          Agendar consultoria grátis
+          Agendar consultoria
         </a>
       </form>
     </div>
