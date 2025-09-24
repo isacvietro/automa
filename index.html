@@ -86,7 +86,7 @@
           <path d="M8.5 12H15"/>
           <polyline points="12.5,9.5 15.5,12 12.5,14.5"/>
         </svg>
-        <span class="font-semibold tracking-tight">Automa</span>
+        <span class="font-semibold tracking-tight">Automa_</span>
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
         <a href="#servicos" class="hover:text-white">Serviços</a>
@@ -463,7 +463,7 @@
     <div class="mt-6 overflow-x-auto snap-x no-scrollbar" id="testi-scroll">
       <div class="flex gap-4 w-max">
         <blockquote class="snap-start w-[30rem] rounded-3xl border border-white/10 p-6 bg-white/5">
-          “eu respondia cliente no fim do expediente e sempre esquecia alguém. agora o whatsapp manda a confirmação e o boleto sozinho, do jeitinho que eu escreveria. sobrou tempo e ninguém fica sem retorno.”
+          “Eu respondia cliente no fim do expediente e sempre esquecia alguém. agora o whatsapp manda a confirmação e o boleto sozinho, do jeitinho que eu escreveria. sobrou tempo e ninguém fica sem retorno.”
           <footer class="mt-4 text-sm text-white/60">Mariana — loja de utilidades</footer>
         </blockquote>
 
@@ -473,12 +473,12 @@
         </blockquote>
 
         <blockquote class="snap-start w-[30rem] rounded-3xl border border-white/10 p-6 bg-white/5">
-          “a agenda parou de dar dor de cabeça. o cliente recebe lembrete um dia antes e outro no mesmo dia, com um botão pra confirmar. simples assim. as faltas caíram e a equipe ficou tranquila.”
+          “A agenda parou de dar dor de cabeça. o cliente recebe lembrete um dia antes e outro no mesmo dia, com um botão pra confirmar. simples assim. as faltas caíram e a equipe ficou tranquila.”
           <footer class="mt-4 text-sm text-white/60">Patrícia — clínica</footer>
         </blockquote>
 
         <blockquote class="snap-start w-[30rem] rounded-3xl border border-white/10 p-6 bg-white/5">
-          “antes eu descobria que o produto tinha acabado quando o cliente já estava no balcão. agora chega aviso no meu celular e já sai a lista pro fornecedor. não perco mais venda boba.”
+          “Antes eu descobria que o produto tinha acabado quando o cliente já estava no balcão. agora chega aviso no meu celular e já sai a lista pro fornecedor. não perco mais venda boba.”
           <footer class="mt-4 text-sm text-white/60">Leandro — mini‑mercado</footer>
         </blockquote>
 
@@ -604,12 +604,12 @@
       }, animate?180:0);
     }
     let flowIndex=0; renderFlow(flowIndex,false);
-    let flowTimer=setInterval(()=>{ flowIndex=(flowIndex+1)%FLOWS.length; renderFlow(flowIndex); },1500);
+    let flowTimer=setInterval(()=>{ flowIndex=(flowIndex+1)%FLOWS.length; renderFlow(flowIndex); },3000);
     const flowCard=document.getElementById('flow-slide')?.closest('.rounded-3xl');
-    if(flowCard){ flowCard.addEventListener('mouseenter',()=>clearInterval(flowTimer)); flowCard.addEventListener('mouseleave',()=>{ clearInterval(flowTimer); flowTimer=setInterval(()=>{ flowIndex=(flowIndex+1)%FLOWS.length; renderFlow(flowIndex); },); }); }
+    if(flowCard){ flowCard.addEventListener('mouseenter',()=>clearInterval(flowTimer)); flowCard.addEventListener('mouseleave',()=>{ clearInterval(flowTimer); flowTimer=setInterval(()=>{ flowIndex=(flowIndex+1)%FLOWS.length; renderFlow(flowIndex); },3000); }); }
 
     // Auto-scroll nos carrosséis horizontais (mobile services e depoimentos)
-    function autoScroll(id, step=320, interval=1500){
+    function autoScroll(id, step=320, interval=3000){
       const el=document.getElementById(id); if(!el) return;
       let dir=1;
       setInterval(()=>{
