@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automa — Ganhe tempo todos os dias</title>
+  <meta name="description" content="A Automa automatiza processos com planilhas, WhatsApp, NF-e e integrações. Consultoria grátis." />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Automa — Ganhe tempo todos os dias" />
+  <meta property="og:description" content="Menos erros, mais vendas e fim do retrabalho." />
+  <meta property="og:image" content="/og-automa-1200x630.png" />
+  <meta property="og:url" content="https://seu-dominio.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="canonical" href="https://seu-dominio.com" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='black'/><path d='M26 56c9-23 39-23 48 0' stroke='white' stroke-width='10' fill='none' stroke-linecap='round' /></svg>">
+
+  <!-- Schema.org (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Automa",
+    "image": "/og-automa-1200x630.png",
+    "address": {"@type": "PostalAddress","addressLocality": "São Caetano do Sul","addressRegion": "SP","addressCountry": "BR"},
+    "areaServed": "ABC Paulista",
+    "url": "https://seu-dominio.com",
+    "telephone": "+55XXXXXXXXXXX",
+    "sameAs": ["https://instagram.com/seuuser"]
+  }
+  </script>
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", "Helvetica Neue", "Arial", "sans-serif"],
+            mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "monospace"],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Subtle glow background */
+    .bg-glow:before{content:"";position:absolute;inset:-20%;background:radial-gradient(80rem 40rem at 50% -10%,rgba(59,130,246,.12),transparent),radial-gradient(55rem 30rem at 0% 10%,rgba(236,72,153,.10),transparent),radial-gradient(70rem 40rem at 100% 0%,rgba(16,185,129,.10),transparent);filter:blur(.5px);z-index:-1}
+    /* Typewriter caret */
+    .caret{display:inline-block;width:.14rem;height:1.2em;background:#fff;margin-left:.25rem;animation:pulse .9s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
+    /* Smooth section reveals */
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
+    .reveal.show{opacity:1;transform:none}
+  /* Carousel fade */
+.carousel-fade-enter { opacity: 0; transform: translateY(6px); }
+.carousel-fade-enter-active { opacity: 1; transform: none; transition: all .45s ease; }
+.carousel-fade-exit { opacity: 1; transform: none; }
+.carousel-fade-exit-active { opacity: 0; transform: translateY(6px); transition: all .35s ease; }
+</style>
+</head>
+<body class="bg-black text-white font-display selection:bg-white/20 selection:text-white">
+
+  <!-- Decorative background -->
+  <div class="fixed inset-0 -z-10 relative bg-glow"></div>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 backdrop-blur-sm bg-black/35 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2">
+        <!-- Logo Automa (hex + seta) -->
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-label="Automa logo">
+          <path d="M7 3H17L22 12L17 21H7L2 12Z"/>
+          <path d="M8.5 12H15"/>
+          <polyline points="12.5,9.5 15.5,12 12.5,14.5"/>
+        </svg>
+        <span class="font-semibold tracking-tight">Automa_</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
+        <a href="#servicos" class="hover:text-white">Serviços</a>
+        <a href="#pacotes" class="hover:text-white">Pacotes</a>
+        <a href="#depoimentos" class="hover:text-white">Depoimentos</a>
+        <a href="#contato" class="hover:text-white">Contato</a>
+      </nav>
+      <a id="wa-top" target="_blank" class="inline-flex items-center gap-2 rounded-2xl bg-white text-black px-4 py-2 text-sm font-semibold hover:shadow-[0_0_0_3px_rgba(255,255,255,0.25)] transition">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M16.2 13.5c-.2-.1-1.2-.6-1.3-.7-.2-.1-.3-.1-.4.1-.1.2-.5.7-.6.8-.1.1-.2.1-.4 0-.2-.1-.9-.4-1.7-1.1-.6-.6-1.1-1.3-1.2-1.5-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.3.1-.1.1-.2.2-.3.1-.1.1-.2 0-.3 0-.1-.4-1.1-.6-1.5-.2-.4-.3-.3-.4-.3h-.3c-.1 0-.3.1-.4.2-.1.2-.6.6-.6 1.5 0 .9.6 1.8.7 1.9.1.1 1.2 2 3 2.8.4.2.8.3 1.1.4.5.2.9.2 1.2.1.4-.1 1.2-.5 1.3-1 .1-.5.1-.9.1-1 0-.2-.1-.2-.3-.3z"/><path d="M20.5 3.5c-4.7-4.7-12.3-4.7-17 0-3.9 3.9-4.6 9.7-2.1 14.3L.5 23.5l5.8-1.9c4.5 2.5 10.3 1.8 14.2-2.1 4.8-4.7 4.8-12.4 0-17zM6.1 19.2l-3.4 1.1 1.1-3.3-.2-.3C1.3 13.1 2 7.7 5.7 4c4.1-4.1 10.8-4.1 14.9 0 4.1 4.1 4.1 10.8 0 14.9-3.7 3.7-9.2 4.4-13.6 2.4l-.3-.1z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="max-w-6xl mx-auto px-4 pt-16 pb-10 md:pt-24 md:pb-20">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-black leading-tight">
+          Faça sua empresa <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/60">ganhar tempo</span> todos os dias.
+        </h1>
+        <p class="mt-6 text-white/70 text-lg">
+          Eu automatizo processos repetitivos com planilhas, WhatsApp, NF-e e integrações. Resultado: menos erros, mais vendas e fim do retrabalho.
+        </p>
+        <div class="mt-6 h-10 text-xl md:text-2xl font-mono text-white/90">
+          <span id="typed"></span><span class="caret"></span>
+        </div>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a id="wa-hero" target="_blank" class="group inline-flex items-center gap-2 rounded-2xl bg-white text-black px-5 py-3 text-base font-semibold hover:shadow-[0_0_0_5px_rgba(255,255,255,0.25)] transition">
+            Agendar consultoria grátis
+            <svg class="w-5 h-5 transition -translate-x-0 group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#servicos" class="inline-flex items-center gap-2 rounded-2xl border border-white/20 px-5 py-3 text-base hover:bg-white/5">
+            Ver o que eu automatizo
+          </a>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-3 text-sm text-white/60">
+          <span class="inline-flex items-center gap-2 border border-white/15 rounded-full px-3 py-1">🔒 LGPD & Documentação</span>
+          <span class="inline-flex items-center gap-2 border border-white/15 rounded-full px-3 py-1">⚡ Entrega em dias</span>
+          <span class="inline-flex items-center gap-2 border border-white/15 rounded-full px-3 py-1">🔗 n8n • Apps Script • Python</span>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-white/0 p-6 md:p-8 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]">
+          <div class="text-sm uppercase tracking-wider text-white/50 flex items-center justify-between">
+    <span>Preview do Fluxo</span>
+    <div id="flow-dots" class="flex gap-1.5"></div>
+  </div>
+  <div id="flow-slide" class="mt-4 grid gap-4"></div>
+  <div id="flow-foot" class="mt-6 flex items-center gap-2 text-sm text-white/60"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="max-w-6xl mx-auto px-4 py-14 md:py-20">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
+        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">⚡</div>
+        <h3 class="mt-4 text-xl font-semibold">WhatsApp Automático</h3>
+        <p class="mt-2 text-white/70 text-sm">Mensagens de confirmação, lembretes e cobranças acionadas por planilhas ou formulários.</p>
+        <div class="mt-4 text-white/70 text-sm">✅ Entrega com vídeo-guia</div>
+      </div>
+      <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
+        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🚀</div>
+        <h3 class="mt-4 text-xl font-semibold">Planilhas Inteligentes</h3>
+        <p class="mt-2 text-white/70 text-sm">Apps Script para calcular, validar e gerar PDFs, etiquetas e arquivos para NF-e.</p>
+        <div class="mt-4 text-white/70 text-sm">✅ Entrega com vídeo-guia</div>
+      </div>
+      <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
+        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🔗</div>
+        <h3 class="mt-4 text-xl font-semibold">Integrações</h3>
+        <p class="mt-2 text-white/70 text-sm">n8n/Zapier com ERPs, Marketplaces, Google, e-mail e webhooks sob medida.</p>
+        <div class="mt-4 text-white/70 text-sm">✅ Entrega com vídeo-guia</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACOTES -->
+  <section id="pacotes" class="max-w-6xl mx-auto px-4 py-14 md:py-20">
+    <h2 class="text-2xl md:text-3xl font-bold">Pacotes simples</h2>
+    <p class="text-white/60 mt-2">Escolha conforme sua necessidade. Todos incluem documentação e 30 dias de garantia.</p>
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
+      <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-semibold">Start</h3>
+        </div>
+        <div class="mt-2 text-white/70">Setup</div>
+        <div class="text-2xl font-bold">R$ 600–1.200</div>
+        <ul class="mt-4 space-y-2 text-sm text-white/80">
+          <li>✅ 1 fluxo</li>
+          <li>✅ 1 modelo de mensagem</li>
+          <li>✅ PDF simples/planilha</li>
+        </ul>
+        <a id="wa-start" target="_blank" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-white text-black px-4 py-2 font-semibold hover:shadow-[0_0_0_4px_rgba(255,255,255,0.25)] transition">Falar no WhatsApp →</a>
+      </div>
+      <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 ring-1 ring-white">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-semibold">Pro</h3>
+          <span class="text-xs uppercase bg-white text-black px-2 py-1 rounded-full">Mais escolhido</span>
+        </div>
+        <div class="mt-2 text-white/70">Setup</div>
+        <div class="text-2xl font-bold">R$ 1.500–3.000</div>
+        <ul class="mt-4 space-y-2 text-sm text-white/80">
+          <li>✅ até 3 fluxos</li>
+          <li>✅ mini-dashboard</li>
+          <li>✅ WhatsApp automático</li>
+        </ul>
+        <a id="wa-pro" target="_blank" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-white text-black px-4 py-2 font-semibold hover:shadow-[0_0_0_4px_rgba(255,255,255,0.25)] transition">Falar no WhatsApp →</a>
+      </div>
+      <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-semibold">Full</h3>
+        </div>
+        <div class="mt-2 text-white/70">Setup</div>
+        <div class="text-2xl font-bold">R$ 3.500–8.000</div>
+        <ul class="mt-4 space-y-2 text-sm text-white/80">
+          <li>✅ ponta a ponta</li>
+          <li>✅ alertas e logs</li>
+          <li>✅ prioridade de suporte</li>
+        </ul>
+        <a id="wa-full" target="_blank" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-white text-black px-4 py-2 font-semibold hover:shadow-[0_0_0_4px_rgba(255,255,255,0.25)] transition">Falar no WhatsApp →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos" class="max-w-6xl mx-auto px-4 py-14 md:py-20">
+    <h2 class="text-2xl md:text-3xl font-bold">O que dizem</h2>
+    <p class="text-white/60 mt-2">Alguns relatos após implantar automações simples.</p>
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
+      <blockquote class="reveal rounded-3xl border border-white/10 p-6 bg-white/5">“Economizamos 1 hora por dia com o WhatsApp automático.”<footer class="mt-4 text-sm text-white/60">Mariana, Loja de Utilidades</footer></blockquote>
+      <blockquote class="reveal rounded-3xl border border-white/10 p-6 bg-white/5">“Orçamentos saem em PDF e o cliente recebe confirmação na hora.”<footer class="mt-4 text-sm text-white/60">Ricardo, Oficina</footer></blockquote>
+      <blockquote class="reveal rounded-3xl border border-white/10 p-6 bg-white/5">“Faltas caíram com lembretes e planilha sincronizada.”<footer class="mt-4 text-sm text-white/60">Patrícia, Clínica</footer></blockquote>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="max-w-4xl mx-auto px-4 py-14 md:py-20">
+    <div class="rounded-3xl border border-white/10 p-6 md:p-8 bg-white/5">
+      <h2 class="text-2xl md:text-3xl font-bold">Fale comigo</h2>
+      <p class="text-white/70 mt-2">Descreva rapidamente seu processo. Eu respondo com um plano claro para automatizar o que dá pra automatizar <span class="whitespace-nowrap">ainda esta semana</span>.</p>
+      <form id="wa-form" class="mt-6 grid gap-4" onsubmit="return false;">
+        <div class="grid md:grid-cols-3 gap-4">
+          <label class="block">
+            <span class="text-sm text-white/70">Seu nome</span>
+            <input id="nome" class="mt-1 w-full rounded-2xl bg-black/40 border border-white/15 px-4 py-3 outline-none focus:border-white/40" placeholder="Ex.: Ana" />
+          </label>
+          <label class="block">
+            <span class="text-sm text-white/70">Seu negócio</span>
+            <input id="negocio" class="mt-1 w-full rounded-2xl bg-black/40 border border-white/15 px-4 py-3 outline-none focus:border-white/40" placeholder="Ex.: Loja de cosméticos" />
+          </label>
+          <label class="block">
+            <span class="text-sm text-white/70">Processo repetitivo</span>
+            <input id="processo" class="mt-1 w-full rounded-2xl bg-black/40 border border-white/15 px-4 py-3 outline-none focus:border-white/40" placeholder="Ex.: Enviar confirmação no WhatsApp" />
+          </label>
+        </div>
+        <a id="wa-btn" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-white text-black px-5 py-3 font-semibold w-full md:w-auto hover:shadow-[0_0_0_5px_rgba(255,255,255,0.25)] transition">
+          Enviar mensagem no WhatsApp
+        </a>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div>© <span id="year"></span> Automa — São Caetano do Sul / ABC-SP</div>
+      <div class="flex items-center gap-4">
+        <a href="#servicos" class="hover:text-white">Serviços</a>
+        <a href="#pacotes" class="hover:text-white">Pacotes</a>
+        <a id="wa-footer" target="_blank" class="hover:text-white">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a id="wa-float" target="_blank" aria-label="Abrir conversa no WhatsApp" class="fixed bottom-5 right-5 md:bottom-8 md:right-8 inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-3 font-semibold shadow-lg hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2)] transition">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.2 13.5c-.2-.1-1.2-.6-1.3-.7-.2-.1-.3-.1-.4.1-.1.2-.5.7-.6.8-.1.1-.2.1-.4 0-.2-.1-.9-.4-1.7-1.1-.6-.6-1.1-1.3-1.2-1.5-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.3.1-.1.1-.2.2-.3.1-.1.1-.2 0-.3 0-.1-.4-1.1-.6-1.5-.2-.4-.3-.3-.4-.3h-.3c-.1 0-.3.1-.4.2-.1.2-.6.6-.6 1.5 0 .9.6 1.8.7 1.9.1.1 1.2 2 3 2.8.4.2.8.3 1.1.4.5.2.9.2 1.2.1.4-.1 1.2-.5 1.3-1 .1-.5.1-.9.1-1 0-.2-.1-.2-.3-.3z"/><path d="M20.5 3.5c-4.7-4.7-12.3-4.7-17 0-3.9 3.9-4.6 9.7-2.1 14.3L.5 23.5l5.8-1.9c4.5 2.5 10.3 1.8 14.2-2.1 4.8-4.7 4.8-12.4 0-17zM6.1 19.2l-3.4 1.1 1.1-3.3-.2-.3C1.3 13.1 2 7.7 5.7 4c4.1-4.1 10.8-4.1 14.9 0 4.1 4.1 4.1 10.8 0 14.9-3.7 3.7-9.2 4.4-13.6 2.4l-.3-.1z"/></svg>
+    Conversar agora
+  </a>
+
+  <!-- JS: Typewriter, reveal on scroll, WhatsApp links -->
+  <script>
+    // ======= CONFIGURE AQUI =======
+    const WHATSAPP_PHONE = '55XXXXXXXXXXX'; // Coloque seu número: 55DDDNÚMERO, ex: 5511912345678
+    const WHATSAPP_DEFAULT = 'Olá! Vi sua página de automação e quero uma consultoria gratuita.';
+    const TYPED_PHRASES = [
+      'Automatize processos.',
+      'Elimine tarefas repetitivas.',
+      'WhatsApp que trabalha por você.',
+      'Planilhas • NF-e • Estoque • Relatórios.'
+    ];
+
+    // Gera links do WhatsApp em todos os CTAs
+    const waLink = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(WHATSAPP_DEFAULT)}`;
+    ['wa-top','wa-hero','wa-start','wa-pro','wa-full','wa-footer','wa-float'].forEach(id=>{
+      const el = document.getElementById(id); if(el) el.href = waLink;
+    });
+
+    // Formulário -> WhatsApp com mensagem personalizada
+    const nome = document.getElementById('nome');
+    const negocio = document.getElementById('negocio');
+    const processo = document.getElementById('processo');
+    const waBtn = document.getElementById('wa-btn');
+    if (waBtn) {
+      waBtn.addEventListener('click', () => {
+        const msg = `Olá! Sou ${nome.value || '(Seu nome)'} da empresa ${negocio.value || '(Seu negócio)'}. Quero automatizar: ${processo.value || '(Descreva aqui)'}.`;
+        const href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
+        window.open(href, '_blank');
+      });
+    }
+
+    // Typewriter simples com deleção
+    const typed = document.getElementById('typed');
+    let tIndex = 0, cIndex = 0, deleting = false;
+    function typeLoop(){
+      const phrase = TYPED_PHRASES[tIndex % TYPED_PHRASES.length];
+      typed.textContent = phrase.substring(0, cIndex);
+      if(!deleting && cIndex === phrase.length){
+        deleting = true; setTimeout(typeLoop, 1000); return;
+      }
+      if(deleting && cIndex === 0){
+        deleting = false; tIndex++; setTimeout(typeLoop, 200); return;
+      }
+      cIndex += deleting ? -1 : 1;
+      setTimeout(typeLoop, deleting ? 35 : 55);
+    }
+    typeLoop();
+
+// ===== Carousel de fluxos (troca a cada 3s) =====
+const FLOWS = [
+  {
+    steps: [
+      { icon: "🛒", title: "Pedido online", desc: "Cliente preenche formulário / WhatsApp." },
+      { icon: "⚙️", title: "Regra da automação", desc: "Valida frete, calcula total e prazo." },
+      { icon: "📲", title: "WhatsApp automático", desc: "Confirmação + link de pagamento." },
+      { icon: "📄", title: "NF-e / Etiqueta", desc: "Documento pronto e organizado." },
+    ],
+    foot: "📈 Resumo diário de pedidos às 18h"
+  },
+  {
+    steps: [
+      { icon: "📅", title: "Agendamento", desc: "Cliente escolhe dia e horário." },
+      { icon: "🔁", title: "Confirmação automática", desc: "Mensagem D-1 e H-2 no WhatsApp." },
+      { icon: "💳", title: "Lembrete de pagamento", desc: "Pix/cartão com conciliação simples." },
+      { icon: "📊", title: "Relatório", desc: "Comparecimento e taxa de faltas." },
+    ],
+    foot: "🧠 Redução de faltas com lembretes"
+  },
+  {
+    steps: [
+      { icon: "🧾", title: "Orçamento", desc: "Dados entram por planilha/form." },
+      { icon: "⚙️", title: "Cálculo automático", desc: "Markup, impostos e prazos." },
+      { icon: "📄", title: "PDF instantâneo", desc: "Documento com sua marca." },
+      { icon: "📲", title: "Envio no WhatsApp", desc: "Mensagem com PDF anexo." },
+    ],
+    foot: "⏱️ Orçamentos emitidos em segundos"
+  },
+  {
+    steps: [
+      { icon: "📦", title: "Estoque mínimo", desc: "Monitoramento em tempo real." },
+      { icon: "🔔", title: "Alerta automático", desc: "Aviso quando < nível definido." },
+      { icon: "✉️", title: "Pedido ao fornecedor", desc: "E-mail/WhatsApp com lista." },
+      { icon: "📈", title: "Dashboard", desc: "Entradas/saídas e custo médio." },
+    ],
+    foot: "🧾 Registro e logs para auditoria"
+  }
+];
+
+const slideEl = document.getElementById('flow-slide');
+const footEl  = document.getElementById('flow-foot');
+const dotsEl  = document.getElementById('flow-dots');
+
+function renderDots(active) {
+  dotsEl.innerHTML = '';
+  FLOWS.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.className = `inline-block w-1.5 h-1.5 rounded-full ${i===active ? 'bg-white' : 'bg-white/30'}`;
+    dotsEl.appendChild(dot);
+  });
+}
+
+function renderFlow(i, animate = true) {
+  const flow = FLOWS[i % FLOWS.length];
+
+  if (animate) {
+    slideEl.classList.remove('carousel-fade-enter','carousel-fade-enter-active');
+    slideEl.classList.add('carousel-fade-exit');
+    slideEl.offsetHeight;
+    slideEl.classList.add('carousel-fade-exit-active');
+  }
+
+  setTimeout(() => {
+    slideEl.className = 'mt-4 grid gap-4 carousel-fade-enter';
+    slideEl.innerHTML = flow.steps.map(s => `
+      <div class="flex items-start gap-3">
+        <div class="text-xl pt-0.5">${s.icon}</div>
+        <div>
+          <div class="font-semibold">${s.title}</div>
+          <div class="text-white/60 text-sm">${s.desc}</div>
+        </div>
+      </div>
+    `).join('');
+
+    footEl.textContent = '';
+    const eIcon = document.createElement('span');
+    const sp = flow.foot.indexOf(' ');
+    eIcon.textContent = sp>0 ? flow.foot.slice(0, sp) : '';
+    eIcon.className = 'align-middle mr-2';
+    const eTxt = document.createElement('span');
+    eTxt.textContent = sp>0 ? flow.foot.slice(sp+1) : flow.foot;
+    footEl.appendChild(eIcon);
+    footEl.appendChild(eTxt);
+    footEl.className = 'mt-6 flex items-center gap-2 text-sm text-white/60';
+
+    requestAnimationFrame(() => {
+      slideEl.classList.add('carousel-fade-enter-active');
+    });
+
+    renderDots(i);
+  }, animate ? 180 : 0);
+}
+
+let flowIndex = 0;
+renderFlow(flowIndex, false);
+let flowTimer = setInterval(() => { flowIndex = (flowIndex + 1) % FLOWS.length; renderFlow(flowIndex); }, 2000);
+
+const flowCard = document.getElementById('flow-slide')?.closest('.rounded-3xl');
+if (flowCard) {
+  flowCard.addEventListener('mouseenter', () => clearInterval(flowTimer));
+  flowCard.addEventListener('mouseleave', () => {
+    clearInterval(flowTimer);
+    flowTimer = setInterval(() => { flowIndex = (flowIndex + 1) % FLOWS.length; renderFlow(flowIndex); }, 2000);
+  });
+}
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el)=>observer.observe(el));
+
+    // Ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- (Opcional) Pixel Meta / GA4
+  <script>/* Insira aqui o Meta Pixel */</script>
+  <script>/* Insira aqui o GA4 */</script>
+  -->
+</body>
+</html>
