@@ -40,32 +40,38 @@
       theme: {
         extend: {
           fontFamily: {
-            display: ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", "Helvetica Neue", "Arial", "sans-serif"],
-            mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "monospace"],
+            display: ["Inter","system-ui","-apple-system","Segoe UI","Roboto","Ubuntu","Cantarell","Noto Sans","Helvetica Neue","Arial","sans-serif"],
+            mono: ["ui-monospace","SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","monospace"],
           }
         }
       }
     }
   </script>
   <style>
-    /* Subtle glow background */
+    /* Background glow */
     .bg-glow:before{content:"";position:absolute;inset:-20%;background:radial-gradient(80rem 40rem at 50% -10%,rgba(59,130,246,.12),transparent),radial-gradient(55rem 30rem at 0% 10%,rgba(236,72,153,.10),transparent),radial-gradient(70rem 40rem at 100% 0%,rgba(16,185,129,.10),transparent);filter:blur(.5px);z-index:-1}
     /* Typewriter caret */
     .caret{display:inline-block;width:.14rem;height:1.2em;background:#fff;margin-left:.25rem;animation:pulse .9s infinite}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
-    /* Smooth section reveals */
+    /* Reveals */
     .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
     .reveal.show{opacity:1;transform:none}
-  /* Carousel fade */
-.carousel-fade-enter { opacity: 0; transform: translateY(6px); }
-.carousel-fade-enter-active { opacity: 1; transform: none; transition: all .45s ease; }
-.carousel-fade-exit { opacity: 1; transform: none; }
-.carousel-fade-exit-active { opacity: 0; transform: translateY(6px); transition: all .35s ease; }
-</style>
+    /* Carousel fade */
+    .carousel-fade-enter { opacity: 0; transform: translateY(6px); }
+    .carousel-fade-enter-active { opacity: 1; transform: none; transition: all .45s ease; }
+    .carousel-fade-exit { opacity: 1; transform: none; }
+    .carousel-fade-exit-active { opacity: 0; transform: translateY(6px); transition: all .35s ease; }
+    /* Horizontal carousel (services+testimonials) */
+    .snap-x{scroll-snap-type:x mandatory}
+    .snap-start{scroll-snap-align:start}
+    .no-scrollbar::-webkit-scrollbar{display:none}
+    .no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+    .badge{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(255,255,255,.15);border-radius:9999px;padding:.25rem .75rem;background:rgba(255,255,255,.06)}
+  </style>
 </head>
 <body class="bg-black text-white font-display selection:bg-white/20 selection:text-white">
 
-  <!-- Decorative background -->
+  <!-- BG -->
   <div class="fixed inset-0 -z-10 relative bg-glow"></div>
 
   <!-- NAV -->
@@ -80,7 +86,7 @@
           <path d="M8.5 12H15"/>
           <polyline points="12.5,9.5 15.5,12 12.5,14.5"/>
         </svg>
-        <span class="font-semibold tracking-tight">Automa_</span>
+        <span class="font-semibold tracking-tight">Automa</span>
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
         <a href="#servicos" class="hover:text-white">Serviços</a>
@@ -102,8 +108,8 @@
         <h1 class="text-4xl md:text-6xl font-black leading-tight">
           Faça sua empresa <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/60">ganhar tempo</span> todos os dias.
         </h1>
-        <p class="mt-6 text-white/70 text-lg">
-          Eu automatizo processos repetitivos com planilhas, WhatsApp, NF-e e integrações. Resultado: menos erros, mais vendas e fim do retrabalho.
+        <p class="mt-6 text-white/80 text-lg leading-relaxed">
+          <strong>Automação sem complicação.</strong> Transformo tarefas manuais em fluxos que rodam sozinhos: <span class="whitespace-nowrap">planilhas inteligentes</span>, <span class="whitespace-nowrap">WhatsApp automático</span>, <span class="whitespace-nowrap">NF‑e/PDF</span>, integrações e relatórios. <br class="hidden md:block" />Menos erros, menos retrabalho e <strong>mais horas livres</strong> pro que realmente importa: vender e atender.
         </p>
         <div class="mt-6 h-10 text-xl md:text-2xl font-mono text-white/90">
           <span id="typed"></span><span class="caret"></span>
@@ -117,20 +123,30 @@
             Ver o que eu automatizo
           </a>
         </div>
-        <div class="mt-6 flex flex-wrap gap-3 text-sm text-white/60">
-          <span class="inline-flex items-center gap-2 border border-white/15 rounded-full px-3 py-1">🔒 LGPD & Documentação</span>
-          <span class="inline-flex items-center gap-2 border border-white/15 rounded-full px-3 py-1">⚡ Entrega em dias</span>
-          <span class="inline-flex items-center gap-2 border border-white/15 rounded-full px-3 py-1">🔗 n8n • Apps Script • Python</span>
+
+        <!-- TAGS -->
+        <div class="mt-6 flex flex-wrap gap-3 text-sm text-white/75">
+          <span class="badge">🔒 LGPD & Documentação</span>
+          <span class="badge">⚡ Entrega em dias</span>
+          <span class="badge">🔗 n8n • Apps Script • Python</span>
+          <span class="badge">🧾 NF‑e • DANFE • PDF</span>
+          <span class="badge">💬 WhatsApp Business API</span>
+          <span class="badge">💳 Pix • Links de Pagamento</span>
+          <span class="badge">📦 Estoque • Compras • Etiquetas</span>
+          <span class="badge">📊 Dashboards & Relatórios</span>
+          <span class="badge">🛟 Logs • Alertas • Backups</span>
         </div>
       </div>
+
+      <!-- Preview do fluxo (carrossel) -->
       <div class="relative">
-        <div class="rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-white/0 p-6 md:p-8 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]">
+        <div class="rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-white/0 p-8 md:p-10 min-h-[420px] md:min-h-[520px] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]">
           <div class="text-sm uppercase tracking-wider text-white/50 flex items-center justify-between">
-    <span>Preview do Fluxo</span>
-    <div id="flow-dots" class="flex gap-1.5"></div>
-  </div>
-  <div id="flow-slide" class="mt-4 grid gap-4"></div>
-  <div id="flow-foot" class="mt-6 flex items-center gap-2 text-sm text-white/60"></div>
+            <span>Preview do Fluxo</span>
+            <div id="flow-dots" class="flex gap-1.5"></div>
+          </div>
+          <div id="flow-slide" class="mt-5 grid gap-5"></div>
+          <div id="flow-foot" class="mt-8 flex items-center gap-2 text-base text-white/60"></div>
         </div>
       </div>
     </div>
@@ -138,24 +154,114 @@
 
   <!-- SERVIÇOS -->
   <section id="servicos" class="max-w-6xl mx-auto px-4 py-14 md:py-20">
-    <div class="grid md:grid-cols-3 gap-6">
+    <h2 class="text-2xl md:text-3xl font-bold">O que eu automatizo</h2>
+    <p class="text-white/60 mt-2">Fluxos prontos para adaptar ao seu negócio.</p>
+
+    <!-- mobile carousel -->
+    <div class="mt-6 md:hidden overflow-x-auto snap-x no-scrollbar" id="services-scroll">
+      <div class="flex gap-4 w-max">
+        <!-- 6 cards -->
+        <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
+          <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📲</div>
+          <h3 class="mt-4 text-xl font-semibold">WhatsApp Automático</h3>
+          <p class="mt-2 text-white/70 text-sm">Confirmações, lembretes e cobranças disparadas por planilha/form.</p>
+          <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+            <li>Templates aprovados</li><li>Anexos PDF</li><li>Logs e reenvios</li>
+          </ul>
+        </div>
+        <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
+          <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🧾</div>
+          <h3 class="mt-4 text-xl font-semibold">Orçamentos & NF‑e</h3>
+          <p class="mt-2 text-white/70 text-sm">Cálculo automático, PDF e integração com emissão.</p>
+          <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+            <li>Markup e impostos</li><li>Envio WhatsApp/E‑mail</li><li>Arquivamento</li>
+          </ul>
+        </div>
+        <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
+          <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📦</div>
+          <h3 class="mt-4 text-xl font-semibold">Estoque inteligente</h3>
+          <p class="mt-2 text-white/70 text-sm">Controle mínimo, alertas e pedido automático.</p>
+          <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+            <li>Entrada/Saída por planilha</li><li>Etiquetas</li><li>Alerta crítico</li>
+          </ul>
+        </div>
+        <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
+          <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📅</div>
+          <h3 class="mt-4 text-xl font-semibold">Agendamentos</h3>
+          <p class="mt-2 text-white/70 text-sm">Confirmação D‑1 e H‑2, redução de faltas.</p>
+          <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+            <li>Google Calendar</li><li>Lembretes multi‑canal</li><li>Relatório de presença</li>
+          </ul>
+        </div>
+        <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
+          <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">💳</div>
+          <h3 class="mt-4 text-xl font-semibold">Cobranças & Pix</h3>
+          <p class="mt-2 text-white/70 text-sm">Link de pagamento e conciliação simples.</p>
+          <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+            <li>Link/Qr Pix</li><li>Confirmação automática</li><li>Baixa em planilha</li>
+          </ul>
+        </div>
+        <div class="snap-start w-80 rounded-3xl border border-white/10 p-6 bg-white/5">
+          <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📊</div>
+          <h3 class="mt-4 text-xl font-semibold">Dashboards</h3>
+          <p class="mt-2 text-white/70 text-sm">Indicadores diários no WhatsApp/E‑mail.</p>
+          <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+            <li>Vendas e retrabalho</li><li>Conversão e faltas</li><li>Custo médio</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- desktop grid -->
+    <div class="mt-6 hidden md:grid md:grid-cols-3 gap-6">
+      <!-- 6 cards -->
       <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
-        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">⚡</div>
+        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📲</div>
         <h3 class="mt-4 text-xl font-semibold">WhatsApp Automático</h3>
-        <p class="mt-2 text-white/70 text-sm">Mensagens de confirmação, lembretes e cobranças acionadas por planilhas ou formulários.</p>
-        <div class="mt-4 text-white/70 text-sm">✅ Entrega com vídeo-guia</div>
+        <p class="mt-2 text-white/70 text-sm">Confirmações, lembretes e cobranças disparadas por planilha/form.</p>
+        <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+          <li>Templates aprovados</li><li>Anexos PDF</li><li>Logs e reenvios</li><li>Antispam básico</li>
+        </ul>
       </div>
       <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
-        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🚀</div>
-        <h3 class="mt-4 text-xl font-semibold">Planilhas Inteligentes</h3>
-        <p class="mt-2 text-white/70 text-sm">Apps Script para calcular, validar e gerar PDFs, etiquetas e arquivos para NF-e.</p>
-        <div class="mt-4 text-white/70 text-sm">✅ Entrega com vídeo-guia</div>
+        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🧾</div>
+        <h3 class="mt-4 text-xl font-semibold">Orçamentos & NF‑e</h3>
+        <p class="mt-2 text-white/70 text-sm">Cálculo automático, PDF e integração com emissão.</p>
+        <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+          <li>Markup e impostos</li><li>Envio por WhatsApp/E‑mail</li><li>Arquivamento</li><li>Numeração e versão</li>
+        </ul>
       </div>
       <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
-        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">🔗</div>
-        <h3 class="mt-4 text-xl font-semibold">Integrações</h3>
-        <p class="mt-2 text-white/70 text-sm">n8n/Zapier com ERPs, Marketplaces, Google, e-mail e webhooks sob medida.</p>
-        <div class="mt-4 text-white/70 text-sm">✅ Entrega com vídeo-guia</div>
+        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📦</div>
+        <h3 class="mt-4 text-xl font-semibold">Estoque inteligente</h3>
+        <p class="mt-2 text-white/70 text-sm">Controle mínimo, alertas e pedido automático.</p>
+        <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+          <li>Entrada/Saída por planilha</li><li>Etiquetas</li><li>Alerta crítico</li><li>Lista de reposição</li>
+        </ul>
+      </div>
+      <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
+        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📅</div>
+        <h3 class="mt-4 text-xl font-semibold">Agendamentos</h3>
+        <p class="mt-2 text-white/70 text-sm">Confirmação D‑1 e H‑2, redução de faltas.</p>
+        <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+          <li>Google Calendar</li><li>Lembretes multi‑canal</li><li>Relatório de presença</li><li>Reagendamento rápido</li>
+        </ul>
+      </div>
+      <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
+        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">💳</div>
+        <h3 class="mt-4 text-xl font-semibold">Cobranças & Pix</h3>
+        <p class="mt-2 text-white/70 text-sm">Link de pagamento e conciliação simples.</p>
+        <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+          <li>Link/Qr Pix</li><li>Confirmação automática</li><li>Baixa em planilha</li><li>Alertas de atraso</li>
+        </ul>
+      </div>
+      <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 transition">
+        <div class="inline-flex items-center justify-center rounded-2xl bg-white text-black w-10 h-10">📊</div>
+        <h3 class="mt-4 text-xl font-semibold">Dashboards</h3>
+        <p class="mt-2 text-white/70 text-sm">Indicadores diários no WhatsApp/E‑mail.</p>
+        <ul class="mt-3 text-sm text-white/80 list-disc list-inside space-y-1">
+          <li>Vendas e retrabalho</li><li>Conversão e faltas</li><li>Custo médio</li><li>Exportação CSV</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -163,7 +269,7 @@
   <!-- PACOTES -->
   <section id="pacotes" class="max-w-6xl mx-auto px-4 py-14 md:py-20">
     <h2 class="text-2xl md:text-3xl font-bold">Pacotes simples</h2>
-    <p class="text-white/60 mt-2">Escolha conforme sua necessidade. Todos incluem documentação e 30 dias de garantia.</p>
+    <p class="text-white/60 mt-2">Todos incluem documentação, vídeo‑guia e 30 dias de garantia.</p>
     <div class="mt-6 grid md:grid-cols-3 gap-6">
       <div class="reveal rounded-3xl border border-white/10 p-6 bg-white/5">
         <div class="flex items-center justify-between">
@@ -172,9 +278,8 @@
         <div class="mt-2 text-white/70">Setup</div>
         <div class="text-2xl font-bold">R$ 600–1.200</div>
         <ul class="mt-4 space-y-2 text-sm text-white/80">
-          <li>✅ 1 fluxo</li>
-          <li>✅ 1 modelo de mensagem</li>
-          <li>✅ PDF simples/planilha</li>
+          <li>✅ 1 fluxo essencial</li><li>✅ 1 modelo de mensagem</li><li>✅ PDF simples/planilha</li>
+          <li>✅ Integração básica (Google)</li><li>✅ Vídeo‑guia de uso</li><li>✅ 15 dias de suporte</li>
         </ul>
         <a id="wa-start" target="_blank" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-white text-black px-4 py-2 font-semibold hover:shadow-[0_0_0_4px_rgba(255,255,255,0.25)] transition">Falar no WhatsApp →</a>
       </div>
@@ -186,9 +291,9 @@
         <div class="mt-2 text-white/70">Setup</div>
         <div class="text-2xl font-bold">R$ 1.500–3.000</div>
         <ul class="mt-4 space-y-2 text-sm text-white/80">
-          <li>✅ até 3 fluxos</li>
-          <li>✅ mini-dashboard</li>
-          <li>✅ WhatsApp automático</li>
+          <li>✅ até 3 fluxos conectados</li><li>✅ Mini‑dashboard</li><li>✅ WhatsApp automático</li>
+          <li>✅ Templates + PDFs</li><li>✅ Logs e alertas</li><li>✅ 30 dias de suporte</li>
+          <li>✅ Treinamento por vídeo</li>
         </ul>
         <a id="wa-pro" target="_blank" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-white text-black px-4 py-2 font-semibold hover:shadow-[0_0_0_4px_rgba(255,255,255,0.25)] transition">Falar no WhatsApp →</a>
       </div>
@@ -199,9 +304,9 @@
         <div class="mt-2 text-white/70">Setup</div>
         <div class="text-2xl font-bold">R$ 3.500–8.000</div>
         <ul class="mt-4 space-y-2 text-sm text-white/80">
-          <li>✅ ponta a ponta</li>
-          <li>✅ alertas e logs</li>
-          <li>✅ prioridade de suporte</li>
+          <li>✅ ponta a ponta (ERP/Whats/Email)</li><li>✅ Alertas, logs e backups</li><li>✅ Prioridade de suporte</li>
+          <li>✅ Auditoria e LGPD básica</li><li>✅ Painéis sob medida</li><li>✅ Integração com pagamentos</li>
+          <li>✅ 60 dias de suporte</li>
         </ul>
         <a id="wa-full" target="_blank" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-white text-black px-4 py-2 font-semibold hover:shadow-[0_0_0_4px_rgba(255,255,255,0.25)] transition">Falar no WhatsApp →</a>
       </div>
@@ -211,16 +316,41 @@
   <!-- DEPOIMENTOS -->
   <section id="depoimentos" class="max-w-6xl mx-auto px-4 py-14 md:py-20">
     <h2 class="text-2xl md:text-3xl font-bold">O que dizem</h2>
-    <p class="text-white/60 mt-2">Alguns relatos após implantar automações simples.</p>
-    <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <blockquote class="reveal rounded-3xl border border-white/10 p-6 bg-white/5">“Economizamos 1 hora por dia com o WhatsApp automático.”<footer class="mt-4 text-sm text-white/60">Mariana, Loja de Utilidades</footer></blockquote>
-      <blockquote class="reveal rounded-3xl border border-white/10 p-6 bg-white/5">“Orçamentos saem em PDF e o cliente recebe confirmação na hora.”<footer class="mt-4 text-sm text-white/60">Ricardo, Oficina</footer></blockquote>
-      <blockquote class="reveal rounded-3xl border border-white/10 p-6 bg-white/5">“Faltas caíram com lembretes e planilha sincronizada.”<footer class="mt-4 text-sm text-white/60">Patrícia, Clínica</footer></blockquote>
+    <p class="text-white/60 mt-2">Relatos de quem colocou o negócio no automático.</p>
+
+    <div class="mt-6 overflow-x-auto snap-x no-scrollbar" id="testi-scroll">
+      <div class="flex gap-4 w-max">
+        <!-- 6 depoimentos -->
+        <blockquote class="snap-start w-[28rem] rounded-3xl border border-white/10 p-6 bg-white/5">
+          “Economizamos 1 hora por dia com o WhatsApp automático. Cliente recebe tudo certinho.”
+          <footer class="mt-4 text-sm text-white/60">Mariana — Loja de Utilidades</footer>
+        </blockquote>
+        <blockquote class="snap-start w-[28rem] rounded-3xl border border-white/10 p-6 bg-white/5">
+          “Orçamentos viram PDF na hora e já mando o link de pagamento. Fechamento ficou rápido.”
+          <footer class="mt-4 text-sm text-white/60">Ricardo — Oficina</footer>
+        </blockquote>
+        <blockquote class="snap-start w-[28rem] rounded-3xl border border-white/10 p-6 bg-white/5">
+          “Faltas caíram muito com os lembretes D‑1. E o relatório me mostra quem confirma.”
+          <footer class="mt-4 text-sm text-white/60">Patrícia — Clínica</footer>
+        </blockquote>
+        <blockquote class="snap-start w-[28rem] rounded-3xl border border-white/10 p-6 bg-white/5">
+          “O estoque me avisa sozinho quando repor. Parei de perder venda por falta de produto.”
+          <footer class="mt-4 text-sm text-white/60">Leandro — Mini‑mercado</footer>
+        </blockquote>
+        <blockquote class="snap-start w-[28rem] rounded-3xl border border-white/10 p-6 bg-white/5">
+          “Antes levava 2 dias pra fechar nota, hoje sai em minutos. Menos erro, menos retrabalho.”
+          <footer class="mt-4 text-sm text-white/60">Silvia — Distribuidora</footer>
+        </blockquote>
+        <blockquote class="snap-start w-[28rem] rounded-3xl border border-white/10 p-6 bg-white/5">
+          “Relatórios no WhatsApp às 18h viraram rotina. Sei como foi o dia sem abrir o notebook.”
+          <footer class="mt-4 text-sm text-white/60">Daniel — Serviços</footer>
+        </blockquote>
+      </div>
     </div>
   </section>
 
   <!-- CONTATO -->
-  <section id="contato" class="max-w-4xl mx-auto px-4 py-14 md:py-20">
+  <section id="contato" class="max-w-6xl mx-auto px-4 py-14 md:py-20">
     <div class="rounded-3xl border border-white/10 p-6 md:p-8 bg-white/5">
       <h2 class="text-2xl md:text-3xl font-bold">Fale comigo</h2>
       <p class="text-white/70 mt-2">Descreva rapidamente seu processo. Eu respondo com um plano claro para automatizar o que dá pra automatizar <span class="whitespace-nowrap">ainda esta semana</span>.</p>
@@ -240,7 +370,7 @@
           </label>
         </div>
         <a id="wa-btn" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-white text-black px-5 py-3 font-semibold w-full md:w-auto hover:shadow-[0_0_0_5px_rgba(255,255,255,0.25)] transition">
-          Enviar mensagem no WhatsApp
+          Agendar consultoria grátis
         </a>
       </form>
     </div>
@@ -260,178 +390,92 @@
 
   <!-- Floating WhatsApp -->
   <a id="wa-float" target="_blank" aria-label="Abrir conversa no WhatsApp" class="fixed bottom-5 right-5 md:bottom-8 md:right-8 inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-3 font-semibold shadow-lg hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2)] transition">
-    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.2 13.5c-.2-.1-1.2-.6-1.3-.7-.2-.1-.3-.1-.4.1-.1.2-.5.7-.6.8-.1.1-.2.1-.4 0-.2-.1-.9-.4-1.7-1.1-.6-.6-1.1-1.3-1.2-1.5-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.3.1-.1.1-.2.2-.3.1-.1.1-.2 0-.3 0-.1-.4-1.1-.6-1.5-.2-.4-.3-.3-.4-.3h-.3c-.1 0-.3.1-.4.2-.1.2-.6.6-.6 1.5 0 .9.6 1.8.7 1.9.1.1 1.2 2 3 2.8.4.2.8.3 1.1.4.5.2.9.2 1.2.1.4-.1 1.2-.5 1.3-1 .1-.5.1-.9.1-1 0-.2-.1-.2-.3-.3z"/><path d="M20.5 3.5c-4.7-4.7-12.3-4.7-17 0-3.9 3.9-4.6 9.7-2.1 14.3L.5 23.5l5.8-1.9c4.5 2.5 10.3 1.8 14.2-2.1 4.8-4.7 4.8-12.4 0-17zM6.1 19.2l-3.4 1.1 1.1-3.3-.2-.3C1.3 13.1 2 7.7 5.7 4c4.1-4.1 10.8-4.1 14.9 0 4.1 4.1 4.1 10.8 0 14.9-3.7 3.7-9.2 4.4-13.6 2.4l-.3-.1z"/></svg>
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.2 13.5c-.2-.1-1.2-.6-1.3-.7-.2-.1-.3-.1-.4.1-.1.2-.5.7-.6.8-.1.1-.2.1-.4 0-.2-.1-.9-.4-1.7-1.1-.6-.6-1.1-1.3-1.2-1.5-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.3.1-.1.1-.2 0-.3 0-.1-.4-1.1-.6-1.5-.2-.4-.3-.3-.4-.3h-.3c-.1 0-.3.1-.4.2-.1.2-.6.6-.6 1.5 0 .9.6 1.8.7 1.9.1.1 1.2 2 3 2.8.4.2.8.3 1.1.4.5.2.9.2 1.2.1.4-.1 1.2-.5 1.3-1 .1-.5.1-.9.1-1 0-.2-.1-.2-.3-.3z"/><path d="M20.5 3.5c-4.7-4.7-12.3-4.7-17 0-3.9 3.9-4.6 9.7-2.1 14.3L.5 23.5l5.8-1.9c4.5 2.5 10.3 1.8 14.2-2.1 4.8-4.7 4.8-12.4 0-17zM6.1 19.2l-3.4 1.1 1.1-3.3-.2-.3C1.3 13.1 2 7.7 5.7 4c4.1-4.1 10.8-4.1 14.9 0 4.1 4.1 4.1 10.8 0 14.9-3.7 3.7-9.2 4.4-13.6 2.4l-.3-.1z"/></svg>
     Conversar agora
   </a>
 
-  <!-- JS: Typewriter, reveal on scroll, WhatsApp links -->
+  <!-- JS -->
   <script>
-    // ======= CONFIGURE AQUI =======
-    const WHATSAPP_PHONE = '55XXXXXXXXXXX'; // Coloque seu número: 55DDDNÚMERO, ex: 5511912345678
-    const WHATSAPP_DEFAULT = 'Olá! Vi sua página de automação e quero uma consultoria gratuita.';
+    // CONFIG
+    const WHATSAPP_PHONE = '55XXXXXXXXXXX';
+    const WHATSAPP_DEFAULT = 'Olá! Quero agendar uma consultoria gratuita de 30 minutos para avaliar automações.';
     const TYPED_PHRASES = [
       'Automatize processos.',
       'Elimine tarefas repetitivas.',
       'WhatsApp que trabalha por você.',
-      'Planilhas • NF-e • Estoque • Relatórios.'
+      'Planilhas • NF‑e • Estoque • Relatórios.'
     ];
 
-    // Gera links do WhatsApp em todos os CTAs
+    // WhatsApp CTAs
     const waLink = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(WHATSAPP_DEFAULT)}`;
     ['wa-top','wa-hero','wa-start','wa-pro','wa-full','wa-footer','wa-float'].forEach(id=>{
       const el = document.getElementById(id); if(el) el.href = waLink;
     });
 
-    // Formulário -> WhatsApp com mensagem personalizada
+    // Formulário -> WhatsApp
     const nome = document.getElementById('nome');
     const negocio = document.getElementById('negocio');
     const processo = document.getElementById('processo');
     const waBtn = document.getElementById('wa-btn');
     if (waBtn) {
       waBtn.addEventListener('click', () => {
-        const msg = `Olá! Sou ${nome.value || '(Seu nome)'} da empresa ${negocio.value || '(Seu negócio)'}. Quero automatizar: ${processo.value || '(Descreva aqui)'}.`;
-        const href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
-        window.open(href, '_blank');
+        const msg = `Olá! Sou ${nome.value || '(Seu nome)'} da empresa ${negocio.value || '(Seu negócio)'}. Quero agendar uma consultoria de 30 min. Processo que desejo automatizar: ${processo.value || '(Descreva aqui)'}.`;
+        window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`,'_blank');
       });
     }
 
-    // Typewriter simples com deleção
-    const typed = document.getElementById('typed');
-    let tIndex = 0, cIndex = 0, deleting = false;
-    function typeLoop(){
-      const phrase = TYPED_PHRASES[tIndex % TYPED_PHRASES.length];
-      typed.textContent = phrase.substring(0, cIndex);
-      if(!deleting && cIndex === phrase.length){
-        deleting = true; setTimeout(typeLoop, 1000); return;
-      }
-      if(deleting && cIndex === 0){
-        deleting = false; tIndex++; setTimeout(typeLoop, 200); return;
-      }
-      cIndex += deleting ? -1 : 1;
-      setTimeout(typeLoop, deleting ? 35 : 55);
-    }
-    typeLoop();
+    // Typewriter
+    const typed = document.getElementById('typed'); let tIndex = 0, cIndex = 0, deleting = false;
+    function typeLoop(){ const phrase=TYPED_PHRASES[tIndex%TYPED_PHRASES.length]; typed.textContent=phrase.substring(0,cIndex);
+      if(!deleting && cIndex===phrase.length){ deleting=true; setTimeout(typeLoop,1000); return; }
+      if(deleting && cIndex===0){ deleting=false; tIndex++; setTimeout(typeLoop,200); return; }
+      cIndex += deleting ? -1 : 1; setTimeout(typeLoop, deleting ? 35 : 55);
+    } typeLoop();
 
-// ===== Carousel de fluxos (troca a cada 3s) =====
-const FLOWS = [
-  {
-    steps: [
-      { icon: "🛒", title: "Pedido online", desc: "Cliente preenche formulário / WhatsApp." },
-      { icon: "⚙️", title: "Regra da automação", desc: "Valida frete, calcula total e prazo." },
-      { icon: "📲", title: "WhatsApp automático", desc: "Confirmação + link de pagamento." },
-      { icon: "📄", title: "NF-e / Etiqueta", desc: "Documento pronto e organizado." },
-    ],
-    foot: "📈 Resumo diário de pedidos às 18h"
-  },
-  {
-    steps: [
-      { icon: "📅", title: "Agendamento", desc: "Cliente escolhe dia e horário." },
-      { icon: "🔁", title: "Confirmação automática", desc: "Mensagem D-1 e H-2 no WhatsApp." },
-      { icon: "💳", title: "Lembrete de pagamento", desc: "Pix/cartão com conciliação simples." },
-      { icon: "📊", title: "Relatório", desc: "Comparecimento e taxa de faltas." },
-    ],
-    foot: "🧠 Redução de faltas com lembretes"
-  },
-  {
-    steps: [
-      { icon: "🧾", title: "Orçamento", desc: "Dados entram por planilha/form." },
-      { icon: "⚙️", title: "Cálculo automático", desc: "Markup, impostos e prazos." },
-      { icon: "📄", title: "PDF instantâneo", desc: "Documento com sua marca." },
-      { icon: "📲", title: "Envio no WhatsApp", desc: "Mensagem com PDF anexo." },
-    ],
-    foot: "⏱️ Orçamentos emitidos em segundos"
-  },
-  {
-    steps: [
-      { icon: "📦", title: "Estoque mínimo", desc: "Monitoramento em tempo real." },
-      { icon: "🔔", title: "Alerta automático", desc: "Aviso quando < nível definido." },
-      { icon: "✉️", title: "Pedido ao fornecedor", desc: "E-mail/WhatsApp com lista." },
-      { icon: "📈", title: "Dashboard", desc: "Entradas/saídas e custo médio." },
-    ],
-    foot: "🧾 Registro e logs para auditoria"
-  }
-];
-
-const slideEl = document.getElementById('flow-slide');
-const footEl  = document.getElementById('flow-foot');
-const dotsEl  = document.getElementById('flow-dots');
-
-function renderDots(active) {
-  dotsEl.innerHTML = '';
-  FLOWS.forEach((_, i) => {
-    const dot = document.createElement('span');
-    dot.className = `inline-block w-1.5 h-1.5 rounded-full ${i===active ? 'bg-white' : 'bg-white/30'}`;
-    dotsEl.appendChild(dot);
-  });
-}
-
-function renderFlow(i, animate = true) {
-  const flow = FLOWS[i % FLOWS.length];
-
-  if (animate) {
-    slideEl.classList.remove('carousel-fade-enter','carousel-fade-enter-active');
-    slideEl.classList.add('carousel-fade-exit');
-    slideEl.offsetHeight;
-    slideEl.classList.add('carousel-fade-exit-active');
-  }
-
-  setTimeout(() => {
-    slideEl.className = 'mt-4 grid gap-4 carousel-fade-enter';
-    slideEl.innerHTML = flow.steps.map(s => `
-      <div class="flex items-start gap-3">
-        <div class="text-xl pt-0.5">${s.icon}</div>
-        <div>
-          <div class="font-semibold">${s.title}</div>
-          <div class="text-white/60 text-sm">${s.desc}</div>
-        </div>
-      </div>
-    `).join('');
-
-    footEl.textContent = '';
-    const eIcon = document.createElement('span');
-    const sp = flow.foot.indexOf(' ');
-    eIcon.textContent = sp>0 ? flow.foot.slice(0, sp) : '';
-    eIcon.className = 'align-middle mr-2';
-    const eTxt = document.createElement('span');
-    eTxt.textContent = sp>0 ? flow.foot.slice(sp+1) : flow.foot;
-    footEl.appendChild(eIcon);
-    footEl.appendChild(eTxt);
-    footEl.className = 'mt-6 flex items-center gap-2 text-sm text-white/60';
-
-    requestAnimationFrame(() => {
-      slideEl.classList.add('carousel-fade-enter-active');
-    });
-
-    renderDots(i);
-  }, animate ? 180 : 0);
-}
-
-let flowIndex = 0;
-renderFlow(flowIndex, false);
-let flowTimer = setInterval(() => { flowIndex = (flowIndex + 1) % FLOWS.length; renderFlow(flowIndex); }, 2000);
-
-const flowCard = document.getElementById('flow-slide')?.closest('.rounded-3xl');
-if (flowCard) {
-  flowCard.addEventListener('mouseenter', () => clearInterval(flowTimer));
-  flowCard.addEventListener('mouseleave', () => {
-    clearInterval(flowTimer);
-    flowTimer = setInterval(() => { flowIndex = (flowIndex + 1) % FLOWS.length; renderFlow(flowIndex); }, 2000);
-  });
-}
-
-    // Reveal on scroll
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
-    }, { threshold: 0.12 });
+    // Reveal
+    const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});},{threshold:0.12});
     document.querySelectorAll('.reveal').forEach((el)=>observer.observe(el));
-
-    // Ano no rodapé
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Carrossel do Preview do Fluxo (3s)
+    const FLOWS=[
+      {steps:[{icon:'🛒',title:'Pedido online',desc:'Cliente preenche formulário / WhatsApp.'},{icon:'⚙️',title:'Regra da automação',desc:'Valida frete, calcula total e prazo.'},{icon:'📲',title:'WhatsApp automático',desc:'Confirmação + link de pagamento.'},{icon:'📄',title:'NF‑e / Etiqueta',desc:'Documento pronto e organizado.'}],foot:'📈 Resumo diário de pedidos às 18h'},
+      {steps:[{icon:'📅',title:'Agendamento',desc:'Cliente escolhe dia e horário.'},{icon:'🔁',title:'Confirmação automática',desc:'Mensagem D‑1 e H‑2 no WhatsApp.'},{icon:'💳',title:'Lembrete de pagamento',desc:'Pix/cartão com conciliação simples.'},{icon:'📊',title:'Relatório',desc:'Comparecimento e taxa de faltas.'}],foot:'🧠 Redução de faltas com lembretes'},
+      {steps:[{icon:'🧾',title:'Orçamento',desc:'Dados entram por planilha/form.'},{icon:'⚙️',title:'Cálculo automático',desc:'Markup, impostos e prazos.'},{icon:'📄',title:'PDF instantâneo',desc:'Documento com sua marca.'},{icon:'📲',title:'Envio no WhatsApp',desc:'Mensagem com PDF anexo.'}],foot:'⏱️ Orçamentos emitidos em segundos'},
+      {steps:[{icon:'📦',title:'Estoque mínimo',desc:'Monitoramento em tempo real.'},{icon:'🔔',title:'Alerta automático',desc:'Aviso quando < nível definido.'},{icon:'✉️',title:'Pedido ao fornecedor',desc:'E‑mail/WhatsApp com lista.'},{icon:'📈',title:'Dashboard',desc:'Entradas/saídas e custo médio.'}],foot:'🧾 Registro e logs para auditoria'}
+    ];
+    const slideEl=document.getElementById('flow-slide'); const footEl=document.getElementById('flow-foot'); const dotsEl=document.getElementById('flow-dots');
+    function renderDots(active){ dotsEl.innerHTML=''; FLOWS.forEach((_,i)=>{const dot=document.createElement('span'); dot.className=`inline-block w-1.5 h-1.5 rounded-full ${i===active?'bg-white':'bg-white/30'}`; dotsEl.appendChild(dot);}); }
+    function renderFlow(i,animate=true){ const flow=FLOWS[i%FLOWS.length];
+      if(animate){ slideEl.classList.remove('carousel-fade-enter','carousel-fade-enter-active'); slideEl.classList.add('carousel-fade-exit'); slideEl.offsetHeight; slideEl.classList.add('carousel-fade-exit-active'); }
+      setTimeout(()=>{
+        slideEl.className='mt-4 grid gap-4 carousel-fade-enter';
+        slideEl.innerHTML=flow.steps.map(s=>`<div class='flex items-start gap-3'><div class='text-2xl pt-0.5'>${s.icon}</div><div><div class='font-semibold text-[1.05rem] md:text-lg'>${s.title}</div><div class='text-white/60 text-[0.95rem]'>${s.desc}</div></div></div>`).join('');
+        footEl.textContent=''; const sp=flow.foot.indexOf(' '); const eIcon=document.createElement('span'); eIcon.textContent=sp>0?flow.foot.slice(0,sp):''; eIcon.className='align-middle mr-2';
+        const eTxt=document.createElement('span'); eTxt.textContent=sp>0?flow.foot.slice(sp+1):flow.foot; footEl.appendChild(eIcon); footEl.appendChild(eTxt); footEl.className='mt-8 flex items-center gap-2 text-base text-white/60';
+        requestAnimationFrame(()=>{ slideEl.classList.add('carousel-fade-enter-active'); }); renderDots(i);
+      }, animate?180:0);
+    }
+    let flowIndex=0; renderFlow(flowIndex,false);
+    let flowTimer=setInterval(()=>{ flowIndex=(flowIndex+1)%FLOWS.length; renderFlow(flowIndex); },1500);
+    const flowCard=document.getElementById('flow-slide')?.closest('.rounded-3xl');
+    if(flowCard){ flowCard.addEventListener('mouseenter',()=>clearInterval(flowTimer)); flowCard.addEventListener('mouseleave',()=>{ clearInterval(flowTimer); flowTimer=setInterval(()=>{ flowIndex=(flowIndex+1)%FLOWS.length; renderFlow(flowIndex); },1500); }); }
+
+    // Auto-scroll nos carrosséis horizontais (mobile services e depoimentos)
+    function autoScroll(id, step=320, interval=1500){
+      const el=document.getElementById(id); if(!el) return;
+      let dir=1;
+      setInterval(()=>{
+        const max=el.scrollWidth-el.clientWidth;
+        if(el.scrollLeft>=max-10) dir=-1;
+        if(el.scrollLeft<=10) dir=1;
+        el.scrollBy({left: step*dir, behavior:'smooth'});
+      }, interval);
+    }
+    autoScroll('services-scroll', 340, 3500);
+    autoScroll('testi-scroll', 480, 4000);
   </script>
 
-  <!-- (Opcional) Pixel Meta / GA4
-  <script>/* Insira aqui o Meta Pixel */</script>
-  <script>/* Insira aqui o GA4 */</script>
-  -->
+  <!-- (Opcional) Pixel Meta / GA4 -->
 </body>
 </html>
